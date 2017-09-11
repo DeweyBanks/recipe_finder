@@ -17,12 +17,12 @@
 
   <div class="mt-5">
 
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">Search</button>
-      </span>
-    </div>
+      <%= form_tag(search_path, :method => "get", :class => "form-inline" ) do %>
+        <div class="form-group">
+          <%= text_field_tag :terms, nil, { placeholder: "Search for . . .", class: "form-control" } %>
+          <%= submit_tag "Search", :name => nil, :class => "btn btn-secondary" %>
+        </div>
+      <% end %>
 
     <table class="table table-striped mt-5">
       <tbody>
