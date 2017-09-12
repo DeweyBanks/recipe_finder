@@ -6,7 +6,6 @@ class WelcomeController < ApplicationController
 
   def search
     terms = params["terms"]
-    url = "http://www.recipepuppy.com/api/"
     response = HTTParty.get("http://www.recipepuppy.com/api/",
     :query => { :i => terms })
     response = JSON.parse(response.body)["results"]
