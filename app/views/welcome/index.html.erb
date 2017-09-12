@@ -14,81 +14,27 @@
 </nav>
 
 <div class="container">
-
   <div class="mt-5">
 
-      <%= form_tag(search_path, :method => "get", :class => "form-inline" ) do %>
-        <div class="form-group">
-          <%= text_field_tag :terms, nil, { placeholder: "Search for . . .", class: "form-control" } %>
+    <%= form_tag(search_path, :method => "get", :class => "form-inline" ) do %>
+      <div class="form-group">
+        <%= text_field_tag :terms, nil, { placeholder: "Search for . . .", class: "form-control" } %>
           <%= submit_tag "Search", :name => nil, :class => "btn btn-secondary" %>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
 
     <table class="table table-striped mt-5">
       <tbody>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
-        <tr>
-          <td><a href="#">Result</a></td>
-        </tr>
+        <%= render :partial => 'result', :collection => @results %>
       </tbody>
+      <nav aria-label="Page navigation">
+        <% if !@results.nil? %>
+          <%= will_paginate @results, renderer: BootstrapPagination::Rails  %>
+        <% else %>
+          <p class="empty">No results yet.</p>
+        <% end %>
+      </nav>
     </table>
 
   </div>
-
 </div><!-- /.container -->
