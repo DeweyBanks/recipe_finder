@@ -177,14 +177,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.beta)
+  bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
   httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  popper_js (~> 1.11, >= 1.11.1)
   pry
   puma (~> 3.0)
   rails (~> 5.0.3)

@@ -2,11 +2,15 @@
 <html>
   <head>
     <title>Recipe finder</title>
+    <meta charset="UTF-8"> <meta name=viewport content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= yield %>
+    <%= render :partial => 'shared/header' %>
+    <div class="main container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>
